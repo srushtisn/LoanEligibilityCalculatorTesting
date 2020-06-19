@@ -11,7 +11,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.1.0",
-  "projectVersion": "1.0.46073914",
+  "projectVersion": "1.0.46247716",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -34,9 +34,55 @@
       {
         "editingStatus": "Publishable",
         "testCaseId": "33f7d168-3be7-498c-9770-550eeb7d2dac",
+        "dataVariationFilePath": ".variations\\Loan Eligibility Data_HDFC.json",
         "fileName": "DataDrivenLoanEligibilityTestCases.xaml"
       }
     ]
   },
-  "expressionLanguage": "VisualBasic"
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "DataDrivenLoanEligibilityTestCases.xaml",
+      "uniqueId": "33f7d168-3be7-498c-9770-550eeb7d2dac",
+      "input": [
+        {
+          "name": "Gross_Income",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Tenure",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "ROI",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Other_EMI",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "Loan_Eligibility",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Loan_EMI",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        }
+      ],
+      "output": []
+    }
+  ]
 }
