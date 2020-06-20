@@ -35,14 +35,14 @@
         "editingStatus": "Publishable",
         "testCaseId": "33f7d168-3be7-498c-9770-550eeb7d2dac",
         "dataVariationFilePath": ".variations\\Loan Eligibility Data_HDFC.json",
-        "fileName": "DataDrivenLoanEligibilityTestCases.xaml"
+        "fileName": "LoanEligibilityTestCases.xaml"
       }
     ]
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "DataDrivenLoanEligibilityTestCases.xaml",
+      "filePath": "LoanEligibilityTestCases.xaml",
       "uniqueId": "33f7d168-3be7-498c-9770-550eeb7d2dac",
       "input": [
         {
