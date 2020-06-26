@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>761,994</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>613,994</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DataDrivenLoanEligibilityTestCases_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,24 +93,12 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke LoanEligibilityCalculator workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LoanEligibilityCalculator.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="argGrossSalary">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Gross_Income" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="argTenure">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Tenure" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="argROI">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ROI" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="argOtherEMI">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Other_EMI" />
-          </InArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="argLoanEligibilityAmt">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Out_LoanEligibilityAmt" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="argEMIAmt">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Out_EMIAmt" />
-          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argGrossSalary">[Gross_Income]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argTenure">[Tenure]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argROI">[ROI]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argOtherEMI">[Other_EMI]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argLoanEligibilityAmt">[Out_LoanEligibilityAmt]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argEMIAmt">[Out_EMIAmt]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Loan Eligibility Amt = &quot; + CInt(Loan_Eligibility).ToString + &quot;Out Loan Eligibility Amt = &quot; + Cint(Out_LoanEligibilityAmt).ToString + &quot; EMI Amt = &quot; + CInt(Loan_EMI).ToString + &quot; Out EMI Amt = &quot; + CInt(Out_EMIAmt).ToString]" />
