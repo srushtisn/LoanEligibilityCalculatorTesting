@@ -11,7 +11,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.1.0",
-  "projectVersion": "1.0.46864146",
+  "projectVersion": "1.0.46866936",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -49,19 +49,19 @@
           "name": "Gross_Income",
           "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
           "required": false,
-          "hasDefault": true
+          "hasDefault": false
         },
         {
           "name": "Tenure",
           "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
           "required": false,
-          "hasDefault": true
+          "hasDefault": false
         },
         {
           "name": "ROI",
           "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
           "required": false,
-          "hasDefault": true
+          "hasDefault": false
         },
         {
           "name": "Other_EMI",
@@ -73,13 +73,13 @@
           "name": "Loan_Eligibility",
           "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
           "required": false,
-          "hasDefault": true
+          "hasDefault": false
         },
         {
           "name": "Loan_EMI",
           "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
           "required": false,
-          "hasDefault": true
+          "hasDefault": false
         }
       ],
       "output": []

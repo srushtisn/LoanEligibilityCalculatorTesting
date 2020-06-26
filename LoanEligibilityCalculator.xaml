@@ -4,11 +4,13 @@
     <x:Property Name="argTenure" Type="InArgument(x:String)" />
     <x:Property Name="argROI" Type="InArgument(x:String)" />
     <x:Property Name="argOtherEMI" Type="InArgument(x:String)" />
+    <x:Property Name="argLoanEligibilityAmt" Type="OutArgument(x:String)" />
+    <x:Property Name="argEMIAmt" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>788,2439</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>690,2912</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LoanEligibilityCalculator_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -64,7 +66,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LoanEligibilityCalculator" sap:VirtualizedContainerService.HintSize="636,2234" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LoanEligibilityCalculator" sap:VirtualizedContainerService.HintSize="540,2707" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="GrossSalary" />
       <Variable x:TypeArguments="x:String" Name="Tenure" />
@@ -78,7 +80,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="594,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="498,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -116,7 +118,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="594,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="498,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
@@ -340,7 +342,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Loan Eligibility Sequence" sap:VirtualizedContainerService.HintSize="594,1820" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence DisplayName="Loan Eligibility Sequence" sap:VirtualizedContainerService.HintSize="498,2293" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Default="https://www.hdfc.com/home-loan-eligibility-calculator" Name="BankURL" />
       </Sequence.Variables>
@@ -350,25 +352,25 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard CloseMode="{x:Null}" OpenMode="{x:Null}" DisplayName="Use Browser Chrome: Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC" sap:VirtualizedContainerService.HintSize="552,1728" sap2010:WorkflowViewState.IdRef="NApplicationCard_2">
+      <uix:NApplicationCard CloseMode="{x:Null}" OpenMode="{x:Null}" DisplayName="Use Browser Chrome: Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC" sap:VirtualizedContainerService.HintSize="456,2201" sap2010:WorkflowViewState.IdRef="NApplicationCard_2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="518,1512" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence sap:VirtualizedContainerService.HintSize="422,1985" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1720" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="380,1891" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Check the pop-up window appear" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
+                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Check the pop-up window appear" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
                   <ui:OnUiElementAppear.Body>
                     <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <sap:WorkflowViewStateService.ViewState>
@@ -417,27 +419,27 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:OnUiElementAppear>
-                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Gross Salary" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[GrossSalary]">
+                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Gross Salary" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[GrossSalary]">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.hdfc.com/home-loan-eligibility-calculator" DesignTimeRectangle="510, 615, 107, 23" ElementType="InputBox" FriendlyName="'25,000'" FullSelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-income-text-value' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-income-text-value' tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAbCAYAAABydtG3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANjSURBVGhD7ZjdS1RBGMb9B7oNuuqqy4iQKAqhi8KLJBICMxIrpC8qFc1SkEBJLPu4MEnKKDXJIC3DFLVQMyvJUDGyDNSylTQz01ZddffN5+3Mcj7N4EDNNj8Y2Dn7nOWceeb9mA0jhbQo8yRGmScxyjyJUeZJjDJPYpR5EqPMk5j/yrzxSS/drntCWdfKaUdKDh3JLaSq5jaa8c1qCqLR8QnKv1NNuTfvWkbvB4+msoL7iu7X0670PP7d+hcdht8FbmkEBvOmZnx08EwBhYVvtx1PO99oSjnB8+M9Nuw9QVsOZ9LKqASeZxSU0tz8PGveDnyiNbGJhvcWw+n9Yer6+FRaFhFDEQmnaO3uJNYnXSjiNXVTo8dg3uDwKA8gjIw8epp3QygAg/z+gDYj+jbxg+IyL9HGfWk0MDTM14R5S92o834/ZV4p443Q9KqbryFSEN0rIuOp7XWvaxozlrQJsdhp5iF75NmB94VZMA309A9yVIr57xj7PknbErMoITufvNMz2lWirt5+WhV9iC6WVbmmMWMwDw/c8a5Pm/35LpQNLFh0ag7tTMvlegjwrqtjjtH1qgY6W1zB5t548Mgx+7z/OEThe5JZpweRjIhOv1zC6+iGxoxjwyLSJoZdvpUdpFA0IagvaGIEME9kGtRGUXc27T9J/Z5fqVWP2ODmRYfZKDlYv86F6HFDY2bRhuVWTZP2TWgRCASorLaZlm+No3PFlcFmBeAzItI3O8dzaEsfNjquh5N5I2PjnH4XM+ZPNWYskYcHxIOGaqrUG4cjgd44J0TdMS8s8Ix8pc0HMih5oSMUhgO9qW5pzNimTQhxA24MJWAcUiS6N5yllmIcwFnLKfImvFPcsSI6hr6MaVeJalrbg/e4pTFja14oHhNAQ1snt+I4S2GD2h3AG9u7Ka+kkqpbXvLn8roWWheXYtjMwsyKx894jg2B2hmbcZ6/wxx6fZ10S6PHsWERhdIuXGVFlAS7IcrEvcbnwSZFDJjX2tXDkQvQtmMD9Hk+8xwRXFhRGzz0Y0QlZRs6d7c0ehzNA6LzCrUIXApYSDQuOEII08C0z8d/Wx3Pu2r520rcM+md1q5YcUsDFjVPYQWLisO0SJl/E2WexCjzJEaZJzFB80R3o8a/PwQq8iRGmSctRD8BhnCcOBrVbZIAAAAASUVORK5CYII=" InformativeScreenshot="5677ebf2dad39530a87024622f85a196.png" SearchSteps="FuzzySelector, Image" Text="25,000" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='text' /&gt;" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
-                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Tenure" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[Tenure]">
+                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Tenure" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,226" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="[Tenure]">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.hdfc.com/home-loan-eligibility-calculator" DesignTimeRectangle="592, 369, 25, 23" ElementType="InputBox" FriendlyName="'20'" FullSelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-tenure-text-value' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-tenure-text-value' tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAbCAYAAACAyoQSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIiSURBVEhL7ZTdS1NxGMf9B7rxzquuuhbxIlCEBHEXihAIai9IMVym4ITylSEo0dBMIkVR0UzFLlTyxlAURCoSFBVDaoEv4aZOXdO595evPs/OjmdLOVs4DNwHzsWe38P5/H7f8/wWhysgJo0qMWlU+T+lOwd/0P1xErVt/cgqq8fzN72YWViB1+sTOvzsm4+4L7+6CU+1HZj8tgiH0yWsBiMrHRifwY20PKQpq5CuqkV8+n3EJeegc3QCPp9frNvU43bhM7Ev6Z6ae9TN3bA5nNwjRVbqcnvElxOb20aW51ZoYbZY4fF6oWkfxM1sJSdA0Anruz4gQVGIue86rkmJ+JvSzlUv2qAoreNITYcWjl3Z8BZWu0PoApZ167h19wleD44JlTMilq7pdzjK8tPonC43fv02IPlBOZ9MyoZhFymPKlDd+l6onBGR9Nhm5yGhKD8vrXLtx8YWEgvK/pJSCpQGpRJK2FK3xwPtu2EepKGJWfE7XyQ1mszIKNb8uzQgpBOOTH8NGiy98QB3imrEuANctBlCVkrCxr5RHorxL/NBQuLIasNDTQufyrBnEqrgXro2dOVCkZX2jE3x/cssqcPL3mE+MT0tp1O5ve+XUNzUU1Dziv8U6DedMvVxJdb1u9wjRVZK8dCOQx96KUVIUBodI584/sB6troBiz/XeD2UsAcpHEhO99ZitQuV87lUabjEpFFFlEonM1pPgOsSL3ACW75OqoN8DmAAAAAASUVORK5CYII=" InformativeScreenshot="e781321ddd8da0b69431f3005f1911f3.png" SearchSteps="FuzzySelector, Image" Text="20" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='text' /&gt;" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
-                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type ROI" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[ROI]">
+                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type ROI" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="[ROI]">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.hdfc.com/home-loan-eligibility-calculator" DesignTimeRectangle="565, 477, 52, 23" ElementType="InputBox" FriendlyName="'7.35'" FullSelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-interest-text-value' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-interest-text-value' tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAbCAYAAAApvkyGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMPSURBVFhH7ZbNS1RRGMb9B9q0a9UqokW0aNEiXLjJRSIZhkSEFYJ9m2gZiVmaYonJVJbVZJrfmqKYWqaZoZWQZCUmQn6gVhMmU6aOHzNPPqd77F7njEaO0Nj84DBzz33vved53+e89/pgheMV6Ol4BXo6XoGejlegK7r7h5CSfV85eE7FoGUY5oo6xGbkYntEAk6a7qLu5WvYJqe0CKDvowWp98qd7pmeX4lPwyNalDMzdju6+gYxbpvUZn7x1wKb2zvhszlQOXhORV7NU6z22wO/8FhsOxKP9TsPifhLOeVigcTVfTftjhACiMPhQOGjZ+JeWw/EiHkmJig6GT1Dn0WMxK0WzXnwBKt8Q/DibZc2Y0SKkAxbv2NHVDL8j8aL/4QC9WJUWEfHEHwqBclZpdh/3oTLs9WtbGrF8dRbBjcQtwkc+TaKXTEXse+cCT/GJ7TZhRmbsCEs8apBYFNbh+FYBZ9Fi18vrUF4UgbOZuYjMs2MsobnWsRv3CawvrVdVE/1ED3cI1z8lxErcqsbsTYgzGBR2tg37DQKHjYh4XYRku6UoORxsyFpjOU1tC6vz65qUNqTuEUgF81MBkZegOWrVZtVQwH6vbU3Ll1URCLPM1kUKvcp3aGPs9sd4nh0bMKlPYlbBLZ2dGONf6jokIvBZtD46p0YmWW1ogL6xU9OTYv/0zMz4pi/ieZiIVjVvBgv7clEc3+yCUmWLJBZi0rPEt2sd8iizf4ZXEj8zQKsCzqIN9292qwzfJWwiqzufGT3rG1pw5bQaBGnt/ySBXZ86MeG4MNIy6swZI7I/cYsq5ACN4Ycw/veAW3WGVaaC1dVUNqT7qHdrxRVGZrUkgQyS3E38oVACp2P3E9yYaX1LWIh0qJs77QoKyAtyhjOs2rSxtyHqv2ttyef5XaB/DJhuz4z+2Ui94ye+QJNhVVCEOfkYCOR700m7Fpx9VxjkSPgRKKywvqXO7+elsWitNnUtLO4hZDWZQd0BauzWAzv09kzMJfcZWky/zpegZ7O/yNQ37VWwpB4LerZAD8BTkbgldqcU3kAAAAASUVORK5CYII=" InformativeScreenshot="7aec8a9f7522885f011770730aac77a0.png" SearchSteps="FuzzySelector, Image" Text="7.35" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='text' /&gt;" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
-                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Other EMI" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="[OtherEMI]">
+                <uix:NTypeInto DelayBetweenKeys="{x:Null}" ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Other EMI" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,226" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="[OtherEMI]">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.hdfc.com/home-loan-eligibility-calculator" DesignTimeRectangle="510, 585, 107, 23" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-other-emi-text-value' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='monthly-other-emi-text-value' tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAbCAYAAABydtG3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVGhD7ZdNSxtRFIb9A/4AV125FnFRsAhdFFxUhK6qxSKVUK0ISaC0jRAKCQWh2i5UFHQlim4E3ShmFUShhZa0tIhNoUmrCcSPoAn5MglvPbd3mkyc0Y0Tc+E8cBb3zJ1Z5Mm595w6MMrC8hSG5SkMy1MYlqcwLE9hWJ7CsDyFYXk1xtFJArMrPnS53mJwZBq+DwFkc2fyqR6dvHQ2h/43k6hr6TSMrS87cidjBcHfEdzufY76todos71C8yOH+N0dY7PCTSU6eXuxIxGEJrJ96LX4NzDWUigW4Z5awK0OG/yfv4kcVZxnZgkN7b34+D0ocuVcODZpc2XFacGVZx3x0yTu2z2weceRymRlFvgaDKHxwQDeLazKTAmdvN3wPgI/fsnVv3VTt52lVYGff6Jo6XGK4iknHI2h9ckLuCbmZKaEacOiHZsURuctc71ohVIpj64surrIQyWXNizza375hLEaM3kH8RPce+a+Wh5Bwvh+qz6Rg2PcfToM53lnmTvLy6y5VMLw2KSN9AK9yFSHRCqNx+73osqih3GZBda2P5megobyeEy4GRY3NsWM1z08KoZzWlMR3el7iVAkJneVMG1YtIvSqFwZa8gXCpheXhezntZ3dDi8ugmgHFN5BN179AGuwOpCEmnuS6YyMmPMpfKY2oblKQzLUxiWpzD/5WndDUfthwZXnsKwPGUB/gJJm/vZct1gggAAAABJRU5ErkJggg==" InformativeScreenshot="61b59aa11df3308f09068142b0dd348f.png" SearchSteps="FuzzySelector, Image" Text="0" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='text' /&gt;" />
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
-                <uix:NGetText DisplayName="Get Loan Eligibility Amt" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                <uix:NGetText DisplayName="Get Loan Eligibility Amt" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NGetText_1">
                   <uix:NGetText.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.hdfc.com/home-loan-eligibility-calculator" DesignTimeRectangle="878, 323, 178, 61" ElementType="Text" FriendlyName="'12,55,578'" FullSelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='e-loan-eligibility' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='e-loan-eligibility' tag='SPAN' type='' aaname='12,55,578' /&gt;" InformativeScreenshot="ad469dc46e98dd9f6a778c9a3f0d8db1.png" SearchSteps="FuzzySelector" Text="12,55,578" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
                   </uix:NGetText.Target>
@@ -445,7 +447,7 @@
                     <OutArgument x:TypeArguments="x:String">[LoanEligibilityAmt]</OutArgument>
                   </uix:NGetText.Text>
                 </uix:NGetText>
-                <uix:NGetText DisplayName="Get EMI Amt" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_2">
+                <uix:NGetText DisplayName="Get EMI Amt" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NGetText_2">
                   <uix:NGetText.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.hdfc.com/home-loan-eligibility-calculator" DesignTimeRectangle="927, 475, 92, 46" ElementType="Text" FriendlyName="'10,000'" FullSelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='e-loan-emi' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Home Loan Eligibility Calculator: Housing Loan Eligibility - HDFC' /&gt;&lt;webctrl id='e-loan-emi' tag='SPAN' type='' aaname='10,000' /&gt;" InformativeScreenshot="57d79dd9bc2c5df5dca3d0cf18697ccf.png" SearchSteps="FuzzySelector" Text="10,000" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
                   </uix:NGetText.Target>
@@ -453,7 +455,29 @@
                     <OutArgument x:TypeArguments="x:String">[EMIAmt]</OutArgument>
                   </uix:NGetText.Text>
                 </uix:NGetText>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Loan Eligibility = &quot; + LoanEligibilityAmt + &quot; Loan EMI = &quot; + EMIAmt]" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Loan Eligibility = &quot; + LoanEligibilityAmt + &quot; Loan EMI = &quot; + EMIAmt]" />
+                <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="338,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[argLoanEligibilityAmt]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[LoanEligibilityAmt]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[argEMIAmt]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[EMIAmt]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                </ui:MultipleAssign>
               </Sequence>
             </Sequence>
           </ActivityAction>
