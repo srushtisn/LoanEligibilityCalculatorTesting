@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DataDrivenLoanEligibilityTestCases" this:DataDrivenLoanEligibilityTestCases.Gross_Income="120000" this:DataDrivenLoanEligibilityTestCases.Tenure="10" this:DataDrivenLoanEligibilityTestCases.ROI="7.5" this:DataDrivenLoanEligibilityTestCases.Loan_Eligibility="5560153" this:DataDrivenLoanEligibilityTestCases.Loan_EMI="66000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DataDrivenLoanEligibilityTestCases" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Gross_Income" Type="InArgument(x:String)" />
     <x:Property Name="Tenure" Type="InArgument(x:String)" />
@@ -7,11 +7,6 @@
     <x:Property Name="Loan_Eligibility" Type="InArgument(x:String)" />
     <x:Property Name="Loan_EMI" Type="InArgument(x:String)" />
   </x:Members>
-  <this:DataDrivenLoanEligibilityTestCases.Other_EMI>
-    <InArgument x:TypeArguments="x:String">
-      <Literal x:TypeArguments="x:String" Value="" />
-    </InArgument>
-  </this:DataDrivenLoanEligibilityTestCases.Other_EMI>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
